@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spesial buat kamu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fce4ec; /* Background pink lembut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container untuk menempatkan hati di tengah */
+.love-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Ukuran total hati */
+    height: 300px;
+}
+
+/* --- Pembentukan Bentuk Hati (Love) --- */
+.heart {
+    position: relative;
+    width: 150px; /* Lebar dasar (setengah dari total lebar) */
+    height: 150px; /* Tinggi dasar */
+    background-color: #e91e63; /* Warna merah muda hati */
+    transform: rotate(-45deg); /* Memutar div 45 derajat untuk mendapatkan ujung bawah */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    animation: pulse 1.5s infinite; /* Animasi berdetak */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bagian Kiri Atas Hati (Lingkaran) */
+.heart::before {
+    content: '';
+    position: absolute;
+    top: -50%; /* Posisikan 50% ke atas dari tengah */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e91e63;
+    border-radius: 50%; /* Membuatnya menjadi lingkaran */
+}
+
+/* Bagian Kanan Atas Hati (Lingkaran) */
+.heart::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%; /* Posisikan 50% ke kanan dari tengah */
+    width: 100%;
+    height: 100%;
+    background-color: #e91e63;
+    border-radius: 50%; /* Membuatnya menjadi lingkaran */
+}
+
+/* --- Gaya Teks --- */
+.thank-you-text {
+    position: relative;
+    z-index: 10; /* Pastikan teks di atas bentuk hati */
+    transform: rotate(45deg); /* Putar teks kembali agar tegak lurus */
+    color: white; /* Warna teks */
+    font-family: 'Pacifico', cursive; /* Font tulisan tangan yang keren */
+    font-size: 1.8em;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Bayangan teks agar lebih menonjol */
+}
+
+/* File: style-kedua.css */
+
+/* Gaya Dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Warna latar belakang biru muda */
+    text-align: center;
+    padding-top: 100px; /* Memberi ruang di bagian atas untuk teks melayang */
+    margin: 0;
+    min-height: 100vh;
+}
+
+header h1 {
+    color: #3f51b5;
+    margin-top: 20px;
+}
+
+/* --- Gaya Teks Melayang Keren --- */
+
+.floating-text {
+    /* Tampilan Teks */
+    display: inline-block;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ff5722; /* Warna oranye cerah */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px 20px;
+    border: 2px solid #ff5722;
+    border-radius: 10px;
+    
+    /* Posisi Awal (agar tidak mengganggu aliran dokumen) */
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%); /* Menengahkan teks */
+
+    /* Menerapkan Animasi */
+    animation: floatAnimation 5s ease-in-out infinite alternate; /* 5 detik, bolak-balik (alternate) */
+}
+
+p.gravity-text {
+    font-family: 'Creepster', cursive; /* Font gaya 'horor/gravitasi' */
+    font-size: 1.5em;
+    line-height: 1.8;
+    color: #a0a0a0; /* Warna abu-abu yang sedikit pudar */
+    margin: 20px auto;
+    max-width: 700px; /* Batasi lebar agar tidak terlalu panjang */
+    padding: 15px;
+    background-color: rgba(40, 40, 60, 0.3); /* Latar belakang semi-transparan */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sedikit bayangan */
+
+    /* Menerapkan Animasi Melayang untuk P */
+    animation: pFloat 6s ease-in-out infinite alternate,
+               gravityDistort 3s linear infinite alternate; /* Dua animasi terpisah */
+}
+
+/* Styling Awal Tombol */
+.continue-button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 30px;
+    /* Menggunakan gradient warna untuk tampilan premium */
+    background: linear-gradient(45deg, #FF6B6B, #FFAD47); /* Merah muda ke Oranye */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 50px; /* Bulat sempurna */
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.4); /* Bayangan yang menyatu dengan warna */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Efek Saat Diarahkan (Hover) */
+.continue-button:hover {
+    /* Mengubah gradient sedikit */
+    background: linear-gradient(45deg, #FFAD47, #FF6B6B);
+    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.6);
+    transform: translateY(-2px); /* Tombol sedikit terangkat */
+}
+
+/* Efek Saat Diklik (Active) */
+.continue-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(255, 107, 107, 0.4);
+}
+
+/* Untuk memastikan container tombol berada di tengah jika diperlukan */
+.button-container {
+    text-align: center;
+    padding-bottom: 20px; /* Jarak bawah */
+}
+
+/* Efek Saat Diarahkan (Hover) */
+.continue-button:hover {
+    background-color: #0056b3; /* Warna sedikit lebih gelap saat disentuh */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Bayangan sedikit lebih besar */
+}
+
+/* Efek Saat Diklik (Active) */
+.continue-button:active {
+    transform: translateY(1px); /* Tombol bergerak sedikit ke bawah, memberikan umpan balik klik */
+}
+
+/* Untuk memastikan container tombol berada di tengah jika diperlukan */
+.button-container {
+    text-align: center;
+    padding-bottom: 20px; /* Jarak bawah */
+}
+
+/* Animasi Melayang untuk Paragraf */
+@keyframes pFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(1deg); /* Sedikit naik dan miring */
+    }
+    100% {
+        transform: translateY(0) rotate(-1deg); /* Kembali dan miring ke arah lain */
+    }
+}
+
+/* Animasi Efek Gravitasi (Distorsi Teks) */
+@keyframes gravityDistort {
+    0% {
+        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); /* Normal */
+        letter-spacing: 0px;
+        transform: skewX(0deg); /* Tidak miring */
+    }
+    25% {
+        text-shadow: 1px 2px 3px rgba(255, 255, 255, 0.3); /* Bayangan jatuh */
+        letter-spacing: 0.5px;
+        transform: skewX(1deg); /* Miring sedikit */
+    }
+    50% {
+        text-shadow: 0px 5px 8px rgba(255, 255, 255, 0.5); /* Bayangan lebih jauh */
+        letter-spacing: 1px;
+        transform: skewX(-1deg); /* Miring ke arah lain */
+    }
+    75% {
+        text-shadow: -1px 2px 3px rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.5px;
+        transform: skewX(1deg);
+    }
+    100% {
+        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+        letter-spacing: 0px;
+        transform: skewX(0deg);
+    }
+}
+
+/* Kunci Animasi (Keyframes) */
+@keyframes floatAnimation {
+    0% {
+        transform: translate(-50%, 0); /* Posisi awal (X=tengah, Y=0) */
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -20px); /* Bergerak naik 20 piksel */
+        opacity: 1;
+    }
+}
+
+/* Animasi Berdetak */
+@keyframes pulse {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.08) rotate(-45deg); /* Membesar sedikit */
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+}
+    </style>
+</head>
+<body>
+
+    <span class="floating-text">Gapapa jomok dikit mah</span>
+
+    <header>
+        <h1>💕💕💕</h1>
+    </header>
+    <section>
+        <p class="gravity-text">Nanti saya perbagus lagi.</p>
+        <p class="gravity-text">Saya juga masih belajar soalnya.</p>
+        <p class="gravity-text">Semoga Anda terinspirasi dengan apa yang Anda lihat!</p>
+        </section>
+
+    <div class="love-container">
+        <div class="heart">
+            <span class="thank-you-text">Tq yah sayang</span>
+        </div>
+    </div>
+
+    <div class="button-container">
+            <a href="lanjutan.html" class="continue-button">
+                Secret
+            </a>
+        </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

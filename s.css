@@ -1,0 +1,164 @@
+/* Reset CSS dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Menggunakan font Poppins yang keren */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6; /* Warna latar belakang lembut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Gaya Kartu Profil Utama --- */
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 15px; /* Sudut membulat */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; /* Lebar maksimum kartu */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px); /* Efek sedikit terangkat saat di-hover */
+}
+
+/* --- Area Foto dan Border Keren --- */
+.photo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px; /* Jarak bawah */
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Membuat foto bulat */
+    /* Border utama */
+    border: 5px solid #4CAF50; /* Border hijau yang solid */
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+/* Efek Border 'Glow' atau 'Animasi' Keren */
+.photo-border-effect {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    /* Gradient warna cerah */
+    background: linear-gradient(45deg, #FF6B6B, #FFD166, #4CAF50, #118AB2);
+    background-size: 400% 400%;
+    z-index: 5;
+    /* Animasi pergerakan gradient */
+    animation: borderGlow 10s ease infinite;
+    opacity: 0.7; /* Sedikit transparan */
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* --- Gaya Teks dan Detail --- */
+.name-title {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.tagline {
+    color: #4CAF50; /* Warna hijau yang sama dengan border foto */
+    font-style: italic;
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #bdc3c7, rgba(0, 0, 0, 0));
+    margin: 25px 0;
+}
+
+.details-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.details-section h2 {
+    color: #34495e;
+    font-size: 1.2em;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.details-section p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.details-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details-section li {
+    color: #7f8c8d;
+    margin-bottom: 8px;
+}
+
+.details-section strong {
+    color: #2c3e50;
+}
+
+.continue-button {
+    display: inline-block; /* Agar bisa mengatur lebar/padding */
+    padding: 12px 25px; /* Jarak di dalam tombol */
+    margin-top: 20px;
+    background-color: #007bff; /* Warna biru cerah yang umum */
+    color: white; /* Teks berwarna putih */
+    text-decoration: none; /* Hilangkan garis bawah default pada link */
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 8px; /* Sudut sedikit membulat */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Transisi untuk efek halus */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* Efek Saat Diarahkan (Hover) */
+.continue-button:hover {
+    background-color: #0056b3; /* Warna sedikit lebih gelap saat disentuh */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Bayangan sedikit lebih besar */
+}
+
+/* Efek Saat Diklik (Active) */
+.continue-button:active {
+    transform: translateY(1px); /* Tombol bergerak sedikit ke bawah, memberikan umpan balik klik */
+}
+
+/* Untuk memastikan container tombol berada di tengah jika diperlukan */
+.button-container {
+    text-align: center;
+    padding-bottom: 20px; /* Jarak bawah */
+}
